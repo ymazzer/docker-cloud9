@@ -3,7 +3,8 @@
 FROM stackbrew/ubuntu:13.10
 
 RUN echo deb http://archive.ubuntu.com/ubuntu saucy main universe multiverse > /etc/apt/sources.list
-RUN apt-get install -y --force-yes software-properties-common
+RUN apt-get update
+RUN apt-get install -y --force-yes software-properties-common build-essential make gcc libxml2-dev mercurial git-core curl
 RUN add-apt-repository -y ppa:chris-lea/node.js
 RUN apt-get update
 RUN apt-get install -y nodejs git
